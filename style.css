@@ -1,0 +1,13 @@
+#square {
+    height:48px;
+    width:48px;
+    background-color: aqua;
+    border: 1px solid black;
+}
+#container {
+    height:832px;
+    width:832px;
+    border:4px solid rebeccapurple;
+    display:flex;
+    flex-wrap: wrap;
+}
