@@ -7,7 +7,13 @@ function hoverEffect(color) {
     Array.from(squareDivs).forEach((squareDiv) => {
     squareDiv.addEventListener("mouseenter", () => {
         if(darkening) {
-            let currentOpacity = parseFloat(squareDiv.style.opacity) || 0;
+            let currentOpacity = 0;
+            if(squareDiv.style.backgroundColor !="white") {
+                currentOpacity = parseFloat(squareDiv.style.opacity) || 0;
+            } else{
+                currentOpacity = 0.1;
+            }
+            
             let newOpacity = currentOpacity + 0.1;
             squareDiv.style.opacity = newOpacity;
         }
@@ -58,6 +64,7 @@ resetButton.addEventListener("click", () => {
     let squares = document.getElementsByClassName("square");
     Array.from(squares).forEach((squareDiv) => {
         squareDiv.style.background = "white";
+        squareDiv.style.opacity = 1;
     });
 });
 let rainbowButton = document.getElementById("rainbow");
@@ -74,6 +81,8 @@ let blackButton = document.getElementById("black");
 blackButton.addEventListener("click", () => {
     rainbow = false;
     darkening = false;
+    darkeningButton.style.backgroundColor = "#f0f0f0";
+    rainbowButton.style.backgroundColor ="#f0f0f0";
 });
 let darkeningButton = document.getElementById("darkening");
 darkeningButton.addEventListener("click", () => {
