@@ -22,11 +22,11 @@
 .buttoncontainer {
     display: flex;
     margin-bottom:10px;
-    gap:7px;
+    gap:8px;
 }
-.rainbow, .darkening, .reset{
+.rainbow, .darkening, .reset, .black{
     height:30px;
-    width:318px;
+    width:236px;
     font-weight: bold;
     font-size: 20px;
 }
