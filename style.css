@@ -17,4 +17,16 @@
     height:30px;
     width:968px;
     margin-bottom:10px;
+    font-size: 20px;
+}
+.buttoncontainer {
+    display: flex;
+    margin-bottom:10px;
+    gap:8px;
+}
+.rainbow, .darkening {
+    height:30px;
+    width:480px;
+    font-weight: bold;
+    font-size: 20px;
 }
