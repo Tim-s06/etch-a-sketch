@@ -22,11 +22,16 @@
 .buttoncontainer {
     display: flex;
     margin-bottom:10px;
-    gap:8px;
+    gap:7px;
 }
-.rainbow, .darkening {
+.rainbow, .darkening, .reset{
     height:30px;
-    width:480px;
+    width:318px;
     font-weight: bold;
     font-size: 20px;
+}
+h1 {
+    margin-left:370px;
+    font-size: 40px;
+    margin-bottom: 10px;
 }

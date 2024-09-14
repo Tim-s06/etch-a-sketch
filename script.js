@@ -30,6 +30,13 @@ button.addEventListener("click",  () => {
         createSquares(input);
     }
 });
+let resetButton = document.getElementById("reset");
+resetButton.addEventListener("click", () => {
+    let squares = document.getElementsByClassName("square");
+    Array.from(squares).forEach((squareDiv) => {
+        squareDiv.style.background = "white";
+    });
+});
     
 
 
