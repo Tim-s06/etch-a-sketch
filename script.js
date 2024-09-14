@@ -1,18 +1,27 @@
 let container = document.getElementById("container");
-
+let darkening = false;
 let rainbow = false;
 
 function hoverEffect(color) {
     let squareDivs = document.getElementsByClassName("square");
     Array.from(squareDivs).forEach((squareDiv) => {
     squareDiv.addEventListener("mouseenter", () => {
+        if(darkening) {
+            let currentOpacity = parseFloat(squareDiv.style.opacity) || 0;
+            let newOpacity = currentOpacity + 0.1;
+            squareDiv.style.opacity = newOpacity;
+        }
         if(rainbow) {
             let r = Math.floor(Math.random()*256);
             let g = Math.floor(Math.random()*256);
             let b = Math.floor(Math.random()*256);
             squareDiv.style.background = `rgb(${r},${g},${b})`;
+            squareDiv.style.opacity = 1;
         } else{
             squareDiv.style.background =  color;
+            if(!darkening) {
+                squareDiv.style.opacity = 1;
+            }            
         }
         
         });
@@ -53,12 +62,30 @@ resetButton.addEventListener("click", () => {
 });
 let rainbowButton = document.getElementById("rainbow");
 rainbowButton.addEventListener("click", () => {
-    rainbow = true;
+    if(rainbow == true) {
+        rainbow = false
+        rainbowButton.style.backgroundColor ="#f0f0f0";
+    } else if(darkening ==false){
+        rainbow = true;
+        rainbowButton.style.backgroundColor = "lightgreen";
+    }
 });
 let blackButton = document.getElementById("black");
 blackButton.addEventListener("click", () => {
     rainbow = false;
+    darkening = false;
 });
+let darkeningButton = document.getElementById("darkening");
+darkeningButton.addEventListener("click", () => {
+    if(darkening ==true) {
+        darkening = false;
+        darkeningButton.style.backgroundColor = "#f0f0f0";
+    } else if(rainbow == false){
+        darkening = true;
+        darkeningButton.style.backgroundColor = "lightgreen";
+    }
+});
+
     
 
 
